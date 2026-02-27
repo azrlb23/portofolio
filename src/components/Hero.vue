@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="relative min-h-screen flex flex-col justify-center pt-24 pb-12 overflow-hidden bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500">
+  <section id="home" class="relative min-h-screen flex flex-col justify-center pt-28 pb-16 overflow-x-hidden bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500">
     
     <!-- Interactive Parallax Canvas Background -->
     <canvas ref="canvasRef" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
@@ -10,13 +10,13 @@
     <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 relative z-10 w-full">
       <!-- High Fashion Editorial Typography -->
       <div class="flex flex-col items-start w-full">
-        <h1 class="text-[5rem] md:text-[9rem] lg:text-[12rem] font-serif tracking-tighter text-[#111111] dark:text-[#e5e5e5] mb-4 leading-[0.85] w-full flex flex-col uppercase transition-colors duration-500">
+        <h1 class="text-[3rem] sm:text-[5rem] md:text-[9rem] lg:text-[12rem] font-serif tracking-tighter text-[#111111] dark:text-[#e5e5e5] mb-4 leading-[0.85] w-full flex flex-col uppercase transition-colors duration-500">
           <span v-scroll-reveal="100" class="font-normal block">Creative</span>
-          <span v-scroll-reveal="200" class="font-light italic text-[#888888] dark:text-[#555555] lowercase ml-12 md:ml-32 lg:ml-64 tracking-normal transition-colors duration-500">& Developer</span>
-          <span v-scroll-reveal="300" class="font-normal block text-transparent [-webkit-text-stroke:1px_#111111] dark:[-webkit-text-stroke:1px_#e5e5e5] text-right mt-4 md:mt-2 transition-all duration-500">Designer</span>
+          <span v-scroll-reveal="200" class="font-light italic text-[#888888] dark:text-[#555555] lowercase ml-6 sm:ml-12 md:ml-32 lg:ml-64 tracking-normal transition-colors duration-500">& Developer</span>
+          <span v-scroll-reveal="300" class="font-normal block text-transparent [-webkit-text-stroke:1px_#111111] dark:[-webkit-text-stroke:1px_#e5e5e5] text-right mt-2 transition-all duration-500">Designer</span>
         </h1>
         
-        <div class="w-full h-[1px] bg-[#E5E5E5] dark:bg-[#222222] my-12 transition-colors duration-500" v-scroll-reveal="400"></div>
+        <div class="w-full h-[1px] bg-[#E5E5E5] dark:bg-[#222222] my-8 md:my-12 transition-colors duration-500" v-scroll-reveal="400"></div>
 
         <div class="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-12">
           <p v-scroll-reveal="500" class="text-base md:text-lg text-[#555555] dark:text-[#888888] font-light max-w-md leading-relaxed transition-colors duration-500">
