@@ -1,6 +1,6 @@
 <template>
-  <section id="portfolio" class="relative bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500 p-6 md:p-12">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+  <section id="portfolio" class="relative bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500 p-6 md:p-12 min-h-full flex flex-col items-stretch">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 w-full flex-1">
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
         <div v-scroll-reveal>

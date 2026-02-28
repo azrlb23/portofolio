@@ -46,7 +46,7 @@
     </div>
 
     <!-- Window Content Area -->
-    <div class="flex-1 overflow-y-auto overflow-x-hidden relative bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500 no-scrollbar block">
+    <div class="flex-1 h-full overflow-y-auto overflow-x-hidden relative bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500 custom-scrollbar flex flex-col items-stretch">
       <slot></slot>
     </div>
     </div>

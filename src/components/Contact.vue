@@ -1,6 +1,6 @@
 <template>
-  <section id="contact" class="relative bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500 p-6 md:p-12">
-    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center relative z-10 flex flex-col items-center">
+  <section id="contact" class="relative bg-[#FAFAFA] dark:bg-[#050505] transition-colors duration-500 p-6 md:p-12 min-h-full flex flex-col items-stretch justify-center">
+    <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center relative z-10 flex flex-col items-center w-full flex-1">
       
       <span v-scroll-reveal class="text-xs uppercase tracking-[0.3em] font-mono text-[#555555] dark:text-[#888888] mb-8 block transition-colors duration-500">
         [ Inquiries ]
