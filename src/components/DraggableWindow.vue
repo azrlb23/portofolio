@@ -54,8 +54,9 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useWindowManager } from '../composables/useWindowManager'
+import { useSound } from '../composables/useSound'
 
 const props = defineProps({
   windowId: {
@@ -65,6 +66,7 @@ const props = defineProps({
 })
 
 const { windows, focusWindow, closeWindow, updateWindowPosition, toggleMaximize: maximizeWindow } = useWindowManager()
+const { playOpen, playClose, playClick } = useSound()
 
 // Reactive reference to the specific window state
 const window = ref(windows.value.find(w => w.id === props.windowId))
@@ -78,10 +80,12 @@ const focus = () => {
 }
 
 const close = () => {
+  playClose()
   closeWindow(props.windowId)
 }
 
 const toggleMaximize = () => {
+  playClick()
   maximizeWindow(props.windowId)
 }
 
@@ -89,6 +93,7 @@ const startDrag = (e) => {
   if (window.value.isMaximized) return
   
   isDragging.value = true
+  playClick() // Subtle tick when starting drag
   focus() // Bring to front when starting to drag
   
   // Calculate offset from the top-left of the window
@@ -116,10 +121,26 @@ const drag = (e) => {
 }
 
 const stopDrag = () => {
+  if (isDragging.value) {
+    playClick() // Subtle tick when dropping
+  }
   isDragging.value = false
   document.removeEventListener('mousemove', drag)
   document.removeEventListener('mouseup', stopDrag)
 }
+
+onMounted(() => {
+  // Play open sound when window is created
+  if (window.value && window.value.isOpen) {
+    playOpen()
+  }
+})
+
+watch(() => window.value?.isOpen, (newVal, oldVal) => {
+  if (newVal && !oldVal) {
+    playOpen()
+  }
+})
 
 onUnmounted(() => {
   document.removeEventListener('mousemove', drag)

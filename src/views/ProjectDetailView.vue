@@ -57,7 +57,7 @@
                 <div class="space-y-4">
                   <div class="flex justify-between items-end pb-3 border-b border-[#CCCCCC] dark:border-[#111111] transition-colors">
                     <span class="text-[#888888] dark:text-[#555555] text-[10px] uppercase tracking-[0.1em] transition-colors">Role</span>
-                    <span class="text-[#555555] dark:text-[#888888] text-xs font-serif italic transition-colors">{{ getRole(project.type) }}</span>
+                    <span class="text-[#555555] dark:text-[#888888] text-xs font-serif italic transition-colors">{{ project.role || getRole(project.type) }}</span>
                   </div>
                   <div class="flex justify-between items-end pb-3 border-b border-[#CCCCCC] dark:border-[#111111] transition-colors">
                     <span class="text-[#888888] dark:text-[#555555] text-[10px] uppercase tracking-[0.1em] transition-colors">Category</span>
@@ -65,7 +65,7 @@
                   </div>
                   <div class="flex justify-between items-end pb-3 border-b border-[#CCCCCC] dark:border-[#111111] transition-colors">
                     <span class="text-[#888888] dark:text-[#555555] text-[10px] uppercase tracking-[0.1em] transition-colors">Year</span>
-                    <span class="text-[#555555] dark:text-[#888888] text-xs font-serif italic transition-colors">2024</span>
+                    <span class="text-[#555555] dark:text-[#888888] text-xs font-serif italic transition-colors">{{ project.year || '2024' }}</span>
                   </div>
                 </div>
 
@@ -131,14 +131,18 @@
         <div v-else class="flex flex-col items-center max-w-4xl mx-auto w-full">
           <!-- Minimalist Info & Overview -->
           <div class="w-full space-y-8 mb-20 border-t border-[#E5E5E5] dark:border-[#222222] pt-8 transition-colors duration-500" v-scroll-reveal>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-[10px] uppercase tracking-[0.2em]">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-[10px] uppercase tracking-[0.2em]">
               <div>
                 <span class="text-[#888888] dark:text-[#555555] block mb-2 transition-colors">Role</span>
-                <span class="text-[#111111] dark:text-[#e5e5e5] transition-colors">{{ getRole(project.type) }}</span>
+                <span class="text-[#111111] dark:text-[#e5e5e5] transition-colors">{{ project.role || getRole(project.type) }}</span>
               </div>
               <div>
                 <span class="text-[#888888] dark:text-[#555555] block mb-2 transition-colors">Category</span>
                 <span class="text-[#111111] dark:text-[#e5e5e5] transition-colors">{{ project.category }}</span>
+              </div>
+              <div>
+                <span class="text-[#888888] dark:text-[#555555] block mb-2 transition-colors">Year</span>
+                <span class="text-[#111111] dark:text-[#e5e5e5] transition-colors">{{ project.year || '2024' }}</span>
               </div>
               <div>
                 <span class="text-[#888888] dark:text-[#555555] block mb-2 transition-colors">Tools</span>

@@ -68,12 +68,14 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useWindowManager } from '../composables/useWindowManager'
+import { useSound } from '../composables/useSound'
 
 const scrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 const isDarkMode = ref(true)
 
 const { toggleWindow } = useWindowManager()
+const { playClick, playOpen } = useSound()
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 20
@@ -81,10 +83,11 @@ const handleScroll = () => {
 
 const handleNavClick = (id) => {
   if (id === 'home') {
-    // Scroll to top or do nothing (let's just scroll to top for now to see Hero)
+    playClick()
     window.scrollTo({ top: 0, behavior: 'smooth' })
   } else {
     toggleWindow(id)
+    playClick() 
   }
 }
 
@@ -94,6 +97,7 @@ const handleNavClickMobile = (id) => {
 }
 
 const toggleTheme = () => {
+  playClick()
   isDarkMode.value = !isDarkMode.value
   
   if (isDarkMode.value) {

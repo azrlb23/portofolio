@@ -102,13 +102,15 @@
                     </div>
                   </div>
 
-                  <div class="py-8 border-b border-[#E5E5E5] dark:border-[#222222] flex flex-col md:flex-row md:items-start gap-4 hover:pl-4 transition-all duration-300 group">
+                  <div class="py-8 flex flex-col md:flex-row md:items-start gap-4 hover:pl-4 transition-all duration-300 group">
                     <h4 class="text-lg font-serif italic text-[#111111] dark:text-[#e5e5e5] md:w-1/3 transition-colors duration-500">Lens Work</h4>
                     <div class="flex-1 text-[#888888] text-sm leading-relaxed group-hover:text-[#555555] dark:group-hover:text-[#cccccc] transition-colors">
                       Portraiture, Commercial Photography, Lightroom, Color Grading. Capturing raw emotional geometry.
                     </div>
                   </div>
                 </div>
+
+
               </div>
             </transition>
           </div>
@@ -126,6 +128,14 @@
             >
               Experience
               <span v-if="activeTimelineTab === 'experience'" class="absolute bottom-[-17px] left-0 w-full h-[1px] bg-[#111111] dark:bg-[#e5e5e5] transition-colors duration-500"></span>
+            </button>
+            <button 
+              @click="activeTimelineTab = 'github'"
+              class="text-[10px] uppercase tracking-[0.2em] transition-colors whitespace-nowrap cursor-pointer pb-2 relative"
+              :class="activeTimelineTab === 'github' ? 'text-[#111111] dark:text-[#e5e5e5] font-medium' : 'text-[#888888] dark:text-[#555555] hover:text-[#111111] dark:hover:text-[#888888] font-light'"
+            >
+              GitHub
+              <span v-if="activeTimelineTab === 'github'" class="absolute bottom-[-17px] left-0 w-full h-[1px] bg-[#111111] dark:bg-[#e5e5e5] transition-colors duration-500"></span>
             </button>
             <button 
               @click="activeTimelineTab = 'organization'"
@@ -153,8 +163,56 @@
                 <div class="group">
                   <span class="text-[10px] font-medium text-[#555555] uppercase tracking-[0.2em] mb-2 block">2024</span>
                   <h4 class="text-[#111111] dark:text-[#e5e5e5] font-serif text-2xl italic mb-3 transition-colors group-hover:text-[#555555] dark:group-hover:text-white">Computer Science Degree</h4>
-                  <p class="text-[#888888] text-sm leading-relaxed">Graduated with honors, focusing on human-computer interaction, algorithm design, and modern web technologies.</p>
+                  <p class="text-[#888888] text-sm leading-relaxed">Undergraduate Informatics Student at Institute Technology of Kalimantan, focusing on human-computer interaction, algorithm design, and modern web technologies.</p>
                 </div>
+              </div>
+            </transition>
+
+            <!-- GitHub View -->
+            <transition name="fade">
+              <div v-if="activeTimelineTab === 'github'" class="absolute inset-0 w-full space-y-12 pb-12">
+                
+                <!-- Open Source Statistics Grid -->
+                <div>
+                  <h4 class="text-xs uppercase tracking-[0.2em] font-medium text-[#111111] dark:text-[#e5e5e5] transition-colors mb-6">GitHub Statistics</h4>
+                  
+                  <div class="grid grid-cols-1 gap-6">
+                    <!-- GitHub Streak Stats -->
+                    <div class="w-full overflow-hidden bg-[#E5E5E5] dark:bg-[#111111] p-6 rounded-sm transition-colors duration-500 group flex items-center justify-center min-h-[160px]">
+                      <img 
+                        src="https://streak-stats.demolab.com?user=AZRLB23&theme=transparent&hide_border=true&title_color=111111&text_color=555555&icon_color=111111&date_format=j%20M%5B%20Y%5D" 
+                        alt="GitHub Streak" 
+                        class="w-full h-auto object-contain github-stats transition-all duration-1000 max-h-48"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Live Telemetry (Green Squares) -->
+                <div>
+                  <div class="flex items-center justify-between mb-6">
+                    <h4 class="text-xs uppercase tracking-[0.2em] font-medium text-[#111111] dark:text-[#e5e5e5] transition-colors">Contributions Graph</h4>
+                    <span class="text-[10px] text-[#888888] flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                      SYSTEM ONLINE
+                    </span>
+                  </div>
+                  
+                  <div class="w-full overflow-hidden bg-[#E5E5E5] dark:bg-[#111111] p-6 rounded-sm transition-colors duration-500 group">
+                    <p class="text-xs font-mono text-[#888888] mb-4 group-hover:text-[#555555] dark:group-hover:text-[#cccccc] transition-colors">
+                      <span class="text-[#111111] dark:text-[#e5e5e5]">></span> Fetching contribution logs... github.com/AZRLB23
+                    </p>
+                    
+                    <img 
+                      :src="`https://ghchart.rshah.org/AZRLB23`" 
+                      alt="GitHub Activity Graph" 
+                      class="w-full h-auto object-contain github-chart transition-all duration-1000"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
               </div>
             </transition>
 
@@ -222,5 +280,46 @@ const activeTimelineTab = ref('experience')
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+</style>
+
+<style>
+/* Global unscoped style for the GitHub chart to handle both themes effectively */
+html.dark .github-chart {
+  /* Invert the white background of the SVG to black, and adjust the hue so the squares look cohesive */
+  filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(1.2);
+  opacity: 0.8;
+}
+
+html:not(.dark) .github-chart {
+  /* For light mode, desaturate to fit the minimalist aesthetic */
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.7;
+}
+
+html.dark .github-chart:hover {
+  filter: invert(1) hue-rotate(180deg) brightness(1) contrast(1.3);
+  opacity: 1;
+}
+
+html:not(.dark) .github-chart:hover {
+  filter: grayscale(0%) contrast(1.1);
+  opacity: 1;
+}
+
+/* Styles for GitHub Readme Stats to match monochrome aesthetic */
+html.dark .github-stats {
+  filter: invert(1) grayscale(100%);
+  opacity: 0.8;
+}
+
+html:not(.dark) .github-stats {
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+html.dark .github-stats:hover,
+html:not(.dark) .github-stats:hover {
+  opacity: 1;
 }
 </style>
