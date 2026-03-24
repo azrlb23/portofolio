@@ -83,10 +83,10 @@
           <h3 v-scroll-reveal class="text-xs uppercase tracking-[0.2em] text-[#111111] dark:text-[#e5e5e5] mb-4 font-medium transition-colors duration-500">Technical Arsenal</h3>
 
           <!-- Skills Content Wrapper for smooth transition -->
-          <div class="relative min-h-[400px]">
+          <div class="relative w-full">
             <!-- Hard Skills View -->
             <transition name="fade">
-              <div class="absolute inset-0 w-full">
+              <div class="w-full">
                 <div class="space-y-0 border-t border-[#E5E5E5] dark:border-[#222222] transition-colors duration-500">
                   <div class="py-8 border-b border-[#E5E5E5] dark:border-[#222222] flex flex-col md:flex-row md:items-start gap-4 hover:pl-4 transition-all duration-300 group">
                     <h4 class="text-lg font-serif italic text-[#111111] dark:text-[#e5e5e5] md:w-1/3 transition-colors duration-500">Software Engineering</h4>
@@ -149,9 +149,9 @@
 
           <!-- Timeline Content Wrapper -->
           <div class="relative min-h-[400px]">
-            <!-- Experience View -->
-            <transition name="fade">
-              <div v-if="activeTimelineTab === 'experience'" class="absolute inset-0 w-full space-y-12">
+            <transition name="fade" mode="out-in">
+              <!-- Experience View -->
+              <div v-if="activeTimelineTab === 'experience'" key="experience" class="w-full space-y-12">
                 <!-- Timeline Item 1 -->
                 <div class="group">
                   <span class="text-[10px] font-medium text-[#555555] uppercase tracking-[0.2em] mb-2 block">Present</span>
@@ -166,11 +166,9 @@
                   <p class="text-[#888888] text-sm leading-relaxed">Undergraduate Informatics Student at Institute Technology of Kalimantan, focusing on human-computer interaction, algorithm design, and modern web technologies.</p>
                 </div>
               </div>
-            </transition>
 
             <!-- GitHub View -->
-            <transition name="fade">
-              <div v-if="activeTimelineTab === 'github'" class="absolute inset-0 w-full space-y-12 pb-12">
+              <div v-else-if="activeTimelineTab === 'github'" key="github" class="w-full space-y-12 pb-12">
                 
                 <!-- Open Source Statistics Grid -->
                 <div>
@@ -214,11 +212,9 @@
                 </div>
 
               </div>
-            </transition>
 
             <!-- Organization View -->
-            <transition name="fade">
-              <div v-if="activeTimelineTab === 'organization'" class="absolute inset-0 w-full space-y-12">
+              <div v-else-if="activeTimelineTab === 'organization'" key="organization" class="w-full space-y-12">
                 <!-- Timeline Item 3 (Organization) -->
                 <div class="group">
                   <span class="text-[10px] font-medium text-[#555555] uppercase tracking-[0.2em] mb-2 block">2026 - Present</span>
