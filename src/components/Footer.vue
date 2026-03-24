@@ -15,7 +15,7 @@
           GTHB
           <span class="absolute -bottom-1 left-0 w-full h-[1px] bg-[#111111] dark:bg-[#e5e5e5] transform origin-left scale-x-0 group-hover:scale-x-100 transition-all duration-300"></span>
         </a>
-        <a href="www.linkedin.com/in/mochammad-azriel-albian-putra-1126721b0" target="_blank" rel="noopener noreferrer" class="text-[10px] font-medium uppercase tracking-[0.2em] text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors relative group">
+        <a href="https://www.linkedin.com/in/mochammad-azriel-albian-putra-1126721b0" target="_blank" rel="noopener noreferrer" class="text-[10px] font-medium uppercase tracking-[0.2em] text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors relative group">
           LKDN
           <span class="absolute -bottom-1 left-0 w-full h-[1px] bg-[#111111] dark:bg-[#e5e5e5] transform origin-left scale-x-0 group-hover:scale-x-100 transition-all duration-300"></span>
         </a>

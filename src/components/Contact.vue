@@ -24,7 +24,7 @@
         <div v-else-if="submissionStatus === 'error'" class="w-full bg-red-50 dark:bg-red-950/20 p-6 mb-8 text-center border-l-2 border-red-500">
           <p class="text-sm font-light text-red-600 dark:text-red-400">System error detected. The transmission failed to send. Please verify your connection or use the direct email link.</p>
           <div class="mt-4 flex gap-4 justify-center">
-            <button @click="submitForm" class="text-[10px] uppercase tracking-[0.2em] border-b border-red-600 dark:border-red-400 pb-1 text-red-600 dark:text-red-400">Retry</button>
+            <button @click="submissionStatus = 'idle'" class="text-[10px] uppercase tracking-[0.2em] border-b border-red-600 dark:border-red-400 pb-1 text-red-600 dark:text-red-400">Retry</button>
             <a href="mailto:azrielalbian23@gmail.com" class="text-[10px] uppercase tracking-[0.2em] border-b border-[#111111] dark:border-[#e5e5e5] pb-1 text-[#111111] dark:text-[#e5e5e5]">Direct Mail</a>
           </div>
         </div>
@@ -137,7 +137,7 @@ const formData = ref({
 
 // Replace this with your actual Web3Forms Access Key
 // Get one for free at https://web3forms.com/
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE'
+const WEB3FORMS_ACCESS_KEY = 'f6eafed6-c63c-46f8-b588-4e2dfbf9088b'
 
 let lastTypeTime = 0
 const handleTypingSound = (e) => {
