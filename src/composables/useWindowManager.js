@@ -9,7 +9,7 @@ const windows = ref([
 ])
 
 const activeProjectId = ref(null)
-let highestZIndex = 10
+let highestZIndex = 100
 
 export function useWindowManager() {
 
@@ -56,8 +56,6 @@ export function useWindowManager() {
         const win = windows.value.find(w => w.id === id)
         if (win) {
             if (win.isOpen) {
-                // If it's already open, but not focused, focus it instead of closing.
-                // If it IS the most focused window, close it.
                 if (win.zIndex === highestZIndex) {
                     closeWindow(id)
                 } else {
@@ -71,7 +69,7 @@ export function useWindowManager() {
 
     const focusWindow = (id) => {
         const win = windows.value.find(w => w.id === id)
-        if (win && win.zIndex !== highestZIndex) {
+        if (win) {
             highestZIndex += 1
             win.zIndex = highestZIndex
         }
@@ -82,6 +80,24 @@ export function useWindowManager() {
         if (win && !win.isMaximized) {
             win.x = x
             win.y = y
+        }
+    }
+
+    const updateWindowSize = (id, width, height) => {
+        const win = windows.value.find(w => w.id === id)
+        if (win && !win.isMaximized) {
+            win.width = Math.max(300, width)
+            win.height = Math.max(200, height)
+        }
+    }
+
+    const updateWindowBounds = (id, bounds) => {
+        const win = windows.value.find(w => w.id === id)
+        if (win && !win.isMaximized) {
+            if (bounds.x !== undefined) win.x = bounds.x
+            if (bounds.y !== undefined) win.y = bounds.y
+            if (bounds.width !== undefined) win.width = Math.max(300, bounds.width)
+            if (bounds.height !== undefined) win.height = Math.max(200, bounds.height)
         }
     }
 
@@ -103,6 +119,8 @@ export function useWindowManager() {
         toggleWindow,
         focusWindow,
         updateWindowPosition,
+        updateWindowSize,
+        updateWindowBounds,
         toggleMaximize
     }
 }

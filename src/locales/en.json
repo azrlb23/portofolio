@@ -48,7 +48,8 @@
       "tabs": { "experience": "Experience", "github": "GitHub", "organization": "Organization" },
       "exp": {
         "item1": { "date": "Present", "title": "Freelance Creative Developer", "desc": "Building modern web applications and providing full-stack design solutions for high-end clientele." },
-        "item2": { "date": "2024", "title": "Computer Science Degree", "desc": "Undergraduate Informatics Student at Institute Technology of Kalimantan, focusing on human-computer interaction, algorithm design, and modern web technologies." }
+        "item2": { "date": "2024 - Present", "title": "Computer Science Degree", "desc": "Undergraduate Informatics Student at Institute Technology of Kalimantan, focusing on human-computer interaction, algorithm design, and modern web technologies." },
+        "item3": { "date": "2026 July - August", "title": "IT Team at PT. INTAN", "desc": "Assisted in web development and IT infrastructure improvements during internship at PT. INTAN." }
       },
       "github": {
         "statsTitle": "GitHub Statistics",

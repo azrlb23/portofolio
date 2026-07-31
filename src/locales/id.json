@@ -7,8 +7,8 @@
     "theme_dark": "Gelap"
   },
   "hero": {
-    "title1": "Kreatif",
-    "title2": "& Developer",
+    "title1": "Developer",
+    "title2": "& Kreatif",
     "title3": "Desainer",
     "description": "Menciptakan pengalaman digital melalui kode minimalis, semantik brutalist, dan estetika high-fashion. Meningkatkan standar interaksi web."
   },
@@ -47,8 +47,9 @@
     "timeline": {
       "tabs": { "experience": "Pengalaman", "github": "GitHub", "organization": "Organisasi" },
       "exp": {
-        "item1": { "date": "Sekarang", "title": "Programmer Freelance Independen", "desc": "Membangun aplikasi web modern dan menyediakan solusi desain sistem penuh untuk berbagai instansi dan klien." },
-        "item2": { "date": "2024", "title": "Mahasiswa Jurusan Informatika", "desc": "Mahasiswa S1 Informatika di Institut Teknologi Kalimantan. Berfokus pada interaksi manusia dan komputer, algoritma, serta teknologi web modern." }
+        "item1": { "date": "Present", "title": "Programmer Freelance Independen", "desc": "Membangun aplikasi web modern dan menyediakan solusi desain sistem penuh untuk berbagai instansi dan klien." },
+        "item2": { "date": "2024 - Present", "title": "Mahasiswa Jurusan Informatika", "desc": "Mahasiswa S1 Informatika di Institut Teknologi Kalimantan. Berfokus pada interaksi manusia dan komputer, algoritma, serta teknologi web modern." },
+        "item3": { "date": "2026 July - August", "title": "Tim IT PT. INTAN", "desc": "Melakukan perbaikan pada website dan sistem IT PT. INTAN sebagai mahasiswa kerja praktik." }
       },
       "github": {
         "statsTitle": "Statistik GitHub",

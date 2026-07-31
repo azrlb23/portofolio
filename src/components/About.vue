@@ -165,6 +165,13 @@
                   <h4 class="text-[#111111] dark:text-[#e5e5e5] font-serif text-2xl italic mb-3 transition-colors group-hover:text-[#555555] dark:group-hover:text-white">{{ $t('about.timeline.exp.item2.title') }}</h4>
                   <p class="text-[#888888] text-sm leading-relaxed">{{ $t('about.timeline.exp.item2.desc') }}</p>
                 </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="group">
+                  <span class="text-[10px] font-medium text-[#555555] uppercase tracking-[0.2em] mb-2 block">{{ $t('about.timeline.exp.item3.date') }}</span>
+                  <h4 class="text-[#111111] dark:text-[#e5e5e5] font-serif text-2xl italic mb-3 transition-colors group-hover:text-[#555555] dark:group-hover:text-white">{{ $t('about.timeline.exp.item3.title') }}</h4>
+                  <p class="text-[#888888] text-sm leading-relaxed">{{ $t('about.timeline.exp.item3.desc') }}</p>
+                </div>
               </div>
 
             <!-- GitHub View -->
@@ -192,7 +199,7 @@
                   <div class="flex items-center justify-between mb-6">
                     <h4 class="text-xs uppercase tracking-[0.2em] font-medium text-[#111111] dark:text-[#e5e5e5] transition-colors">{{ $t('about.timeline.github.graphTitle') }}</h4>
                     <span class="text-[10px] text-[#888888] flex items-center gap-2">
-                      <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                      <span class="w-2 h-2 rounded-full bg-green-500"></span>
                       {{ $t('about.timeline.github.systemOnline') }}
                     </span>
                   </div>

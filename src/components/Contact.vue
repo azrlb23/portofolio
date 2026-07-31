@@ -15,7 +15,7 @@
 
       <!-- Form Status Notices -->
       <transition name="fade">
-        <div v-if="submissionStatus === 'success'" class="w-full bg-[#E5E5E5] dark:bg-[#111111] p-6 mb-8 text-center border-l-2 border-[#111111] dark:border-[#e5e5e5]">
+        <div v-if="submissionStatus === 'success'" class="w-full bg-[#E5E5E5] dark:bg-[#111111] p-6 mb-8 text-center border border-[#CCCCCC] dark:border-[#222222]">
           <h3 class="font-serif italic text-2xl text-[#111111] dark:text-[#e5e5e5] mb-2">{{ $t('contact.success.title') }}</h3>
           <p class="text-sm font-light text-[#555555] dark:text-[#888888]">{{ $t('contact.success.desc') }}</p>
           <button @click="resetForm" class="mt-6 text-[10px] uppercase tracking-[0.2em] border-b border-[#111111] dark:border-[#e5e5e5] pb-1 text-[#111111] dark:text-[#e5e5e5]">{{ $t('contact.success.btn') }}</button>
@@ -34,59 +34,59 @@
       <form v-if="submissionStatus === 'idle' || submissionStatus === 'submitting'" @submit.prevent="submitForm" class="flex flex-col gap-8 w-full">
         
         <!-- Input Group: Name -->
-        <div class="relative group">
+        <div class="flex flex-col gap-2">
+          <label 
+            for="name" 
+            class="text-[10px] uppercase font-mono tracking-[0.2em] text-[#555555] dark:text-[#888888]"
+          >
+            {{ $t('contact.form.name') }}
+          </label>
           <input 
             type="text" 
             id="name" 
             v-model="formData.name"
             required
             @keydown="handleTypingSound"
-            class="block w-full bg-transparent border-0 border-b border-[#CCCCCC] dark:border-[#333333] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-0 font-light placeholder-transparent transition-colors peer"
+            class="block w-full bg-transparent border border-[#CCCCCC] dark:border-[#222222] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:outline-none focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-4 font-light transition-colors"
             :placeholder="$t('contact.form.name')"
           />
-          <label 
-            for="name" 
-            class="absolute left-0 top-3 text-[#888888] dark:text-[#555555] text-sm md:text-base font-light transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-[#111111] dark:peer-focus:text-[#e5e5e5] peer-valid:-top-3.5 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-[0.2em]"
-          >
-            {{ $t('contact.form.name') }}
-          </label>
         </div>
 
         <!-- Input Group: Email -->
-        <div class="relative group">
+        <div class="flex flex-col gap-2">
+          <label 
+            for="email" 
+            class="text-[10px] uppercase font-mono tracking-[0.2em] text-[#555555] dark:text-[#888888]"
+          >
+            {{ $t('contact.form.emailLabel') }}
+          </label>
           <input 
             type="email" 
             id="email" 
             v-model="formData.email"
             required
             @keydown="handleTypingSound"
-            class="block w-full bg-transparent border-0 border-b border-[#CCCCCC] dark:border-[#333333] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-0 font-light placeholder-transparent transition-colors peer"
+            class="block w-full bg-transparent border border-[#CCCCCC] dark:border-[#222222] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:outline-none focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-4 font-light transition-colors"
             :placeholder="$t('contact.form.emailPlaceholder')"
           />
-          <label 
-            for="email" 
-            class="absolute left-0 top-3 text-[#888888] dark:text-[#555555] text-sm md:text-base font-light transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-[#111111] dark:peer-focus:text-[#e5e5e5] peer-valid:-top-3.5 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-[0.2em]"
-          >
-            {{ $t('contact.form.emailLabel') }}
-          </label>
         </div>
 
         <!-- Input Group: Message -->
-        <div class="relative group h-32 md:h-48">
+        <div class="flex flex-col gap-2">
+          <label 
+            for="message" 
+            class="text-[10px] uppercase font-mono tracking-[0.2em] text-[#555555] dark:text-[#888888]"
+          >
+            {{ $t('contact.form.messageLabel') }}
+          </label>
           <textarea 
             id="message" 
             v-model="formData.message"
             required
             @keydown="handleTypingSound"
-            class="block w-full h-full bg-transparent border-0 border-b border-[#CCCCCC] dark:border-[#333333] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-0 font-light placeholder-transparent transition-colors peer resize-none custom-scrollbar"
+            class="block w-full h-32 md:h-40 bg-transparent border border-[#CCCCCC] dark:border-[#222222] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:outline-none focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base p-4 font-light transition-colors resize-none custom-scrollbar"
             :placeholder="$t('contact.form.messagePlaceholder')"
           ></textarea>
-          <label 
-            for="message" 
-            class="absolute left-0 top-3 text-[#888888] dark:text-[#555555] text-sm md:text-base font-light transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-[#111111] dark:peer-focus:text-[#e5e5e5] peer-valid:-top-3.5 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-[0.2em]"
-          >
-            {{ $t('contact.form.messageLabel') }}
-          </label>
         </div>
 
         <!-- Submission Controls -->
