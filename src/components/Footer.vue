@@ -6,7 +6,7 @@
           AZRLB.
         </a>
         <p class="text-[#888888] dark:text-[#555555] text-[10px] uppercase tracking-[0.2em] transition-colors duration-500">
-          &copy; {{ new Date().getFullYear() }} INDONESIA.
+          &copy; {{ new Date().getFullYear() }} {{ $t('footer.location') }}
         </p>
       </div>
       

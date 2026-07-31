@@ -10,22 +10,30 @@
         
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-12">
-          <button v-for="link in navLinks" :key="link.name" @click="handleNavClick(link.id)" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors relative group">
-            {{ link.name }}
+          <button v-for="link in navLinks" :key="link.id" @click="handleNavClick(link.id)" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors relative group">
+            {{ $t(`nav.${link.id}`) }}
             <span class="absolute -bottom-2 left-0 w-full h-[1px] bg-[#111111] dark:bg-[#e5e5e5] transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
           </button>
           
-          <button @click="toggleTheme" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors relative group">
-            [ {{ isDarkMode ? 'Light' : 'Dark' }} ]
-          </button>
+          <div class="flex items-center space-x-4">
+            <button @click="toggleLocale" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors relative group">
+              [ {{ locale.toUpperCase() }} ]
+            </button>
+            <button @click="toggleTheme" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors relative group">
+              [ {{ isDarkMode ? $t('nav.theme_light') : $t('nav.theme_dark') }} ]
+            </button>
+          </div>
           
           <button @click="handleNavClick('contact')" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#FAFAFA] dark:text-[#050505] bg-[#111111] dark:bg-[#e5e5e5] hover:bg-[#555555] dark:hover:bg-white px-4 py-1.5 transition-colors">
-            Let's Talk
+            {{ $t('nav.letsTalk') }}
           </button>
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="md:hidden flex items-center gap-6">
+        <div class="md:hidden flex items-center gap-4">
+          <button @click="toggleLocale" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888]">
+            [ {{ locale.toUpperCase() }} ]
+          </button>
           <button @click="toggleTheme" class="text-[10px] uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888]">
             [ {{ isDarkMode ? 'L' : 'D' }} ]
           </button>
@@ -52,12 +60,12 @@
     >
       <div v-if="isMobileMenuOpen" class="md:hidden absolute top-full left-0 w-full bg-[#FAFAFA] dark:bg-[#050505] border-b border-[#E5E5E5] dark:border-[#222222]">
         <div class="px-6 py-6 space-y-6 flex flex-col items-center">
-          <button v-for="link in navLinks" :key="link.name" @click="handleNavClickMobile(link.id)" class="block text-xs uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors">
-            {{ link.name }}
+          <button v-for="link in navLinks" :key="link.id" @click="handleNavClickMobile(link.id)" class="block text-xs uppercase tracking-[0.2em] font-medium text-[#555555] dark:text-[#888888] hover:text-[#111111] dark:hover:text-[#e5e5e5] transition-colors">
+            {{ $t(`nav.${link.id}`) }}
           </button>
           <div class="w-full h-[1px] bg-[#E5E5E5] dark:bg-[#222222]"></div>
           <button @click="handleNavClickMobile('contact')" class="block text-xs uppercase tracking-[0.2em] font-medium text-[#FAFAFA] dark:text-[#050505] bg-[#111111] dark:bg-[#e5e5e5] hover:bg-[#555555] dark:hover:bg-white px-8 py-3 transition-colors">
-            Let's Talk
+            {{ $t('nav.letsTalk') }}
           </button>
         </div>
       </div>
@@ -67,6 +75,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useWindowManager } from '../composables/useWindowManager'
 import { useSound } from '../composables/useSound'
 
@@ -74,8 +83,14 @@ const scrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 const isDarkMode = ref(true)
 
+const { locale } = useI18n({ useScope: 'global' })
 const { toggleWindow } = useWindowManager()
 const { playClick, playOpen } = useSound()
+
+const toggleLocale = () => {
+  playClick()
+  locale.value = locale.value === 'en' ? 'id' : 'en'
+}
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 20

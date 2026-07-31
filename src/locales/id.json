@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "about": "Tentang",
+    "portfolio": "Karya Pilihan",
+    "letsTalk": "Hubungi",
+    "theme_light": "Terang",
+    "theme_dark": "Gelap"
+  },
+  "hero": {
+    "title1": "Kreatif",
+    "title2": "& Developer",
+    "title3": "Desainer",
+    "description": "Menciptakan pengalaman digital melalui kode minimalis, semantik brutalist, dan estetika high-fashion. Meningkatkan standar interaksi web."
+  },
+  "about": {
+    "header": {
+      "prefix": "Menjembatani jarak antara",
+      "logic": "logika",
+      "amp": "&",
+      "aesthetics": "estetika.",
+      "cv": "Buku Riwayat Hidup"
+    },
+    "stats": {
+      "yearsExp": "Tahun Pengalaman",
+      "projects": "Proyek"
+    },
+    "philosophy": {
+      "title": "Filosofi",
+      "p1_1": "Saya percaya bahwa ",
+      "p1_highlight": "desain hebat harus didukung oleh kode yang bersih",
+      "p1_2": ", dan sistem yang kuat membutuhkan antarmuka yang intuitif untuk bersinar.",
+      "p2": "Melalui lensa seorang fotografer, saya belajar mengidentifikasi detail krusial. Sebagai desainer, saya belajar empati terhadap pengguna. Dan sebagai developer, saya belajar membangun logika yang terukur untuk menghidupkan visi estetik tersebut."
+    },
+    "process": {
+      "title": "Proses",
+      "step1": { "title": "01 // Penemuan", "desc": "Memahami tujuan utama, target pengguna, batasan teknis, dan lanskap kompetitif." },
+      "step2": { "title": "02 // Konsep", "desc": "Pembuatan wireframe, moodboard, dan menetapkan arah visual yang otentik." },
+      "step3": { "title": "03 // Pembuatan", "desc": "Menulis kode yang rapi, merancang komponen minimalis, dan mengeksekusi visualisasi." },
+      "step4": { "title": "04 // Pengiriman", "desc": "Pengujian ketat, optimasi performa, kompilasi akhir, dan penyerahan sistem." }
+    },
+    "skills": {
+      "title": "Gudang Senjata",
+      "se": { "title": "Rekayasa Perangkat Lunak", "desc": "Vue.js, Next.js, TailwindCSS, Node.js, Java, Python. Berfokus pada arsitektur bersih dan sistem REST API yang tangguh." },
+      "design": { "title": "Arahan Seni & Desain", "desc": "Figma, Adobe Illustrator, UI/UX, Tipografi, Identitas Merek. Merancang antarmuka yang terasa nyata dan taktil." },
+      "lens": { "title": "Fotografi", "desc": "Potret, Fotografi Komersial, Lightroom, Color Grading. Menangkap bahasa emosi secara visual." }
+    },
+    "timeline": {
+      "tabs": { "experience": "Pengalaman", "github": "GitHub", "organization": "Organisasi" },
+      "exp": {
+        "item1": { "date": "Sekarang", "title": "Programmer Freelance Independen", "desc": "Membangun aplikasi web modern dan menyediakan solusi desain sistem penuh untuk berbagai instansi dan klien." },
+        "item2": { "date": "2024", "title": "Mahasiswa Jurusan Informatika", "desc": "Mahasiswa S1 Informatika di Institut Teknologi Kalimantan. Berfokus pada interaksi manusia dan komputer, algoritma, serta teknologi web modern." }
+      },
+      "github": {
+        "statsTitle": "Statistik GitHub",
+        "graphTitle": "Grafik Kontribusi",
+        "systemOnline": "SISTEM AKTIF",
+        "fetching": "Menarik data kontribusi... github.com/AZRLB23"
+      },
+      "org": {
+        "item1": { "date": "2026 - Sekarang", "title": "Cabang Mahasiswa IEEE Institut Teknologi Kalimantan", "desc": "Ketua Umum." },
+        "item2": { "date": "2026 - Sekarang", "title": "Himpunan Mahasiswa Informatika ITK", "desc": "Staf Ahli, Hubungan Pengembangan Sumber Daya Mahasiswa." },
+        "item3": { "date": "2025 - 2026", "title": "Cabang Mahasiswa IEEE Institut Teknologi Kalimantan", "desc": "Departemen Hubungan Masyarakat." },
+        "item4": { "date": "2025 - 2026", "title": "Himpunan Mahasiswa Informatika ITK", "desc": "Staf, Pengembangan Sumber Daya Mahasiswa." },
+        "item5": { "date": "2023 - 2025", "title": "Jaringan Waspada Narkoba (Jarwasnaba)", "desc": "Anggota Aktif." },
+        "item6": { "date": "2023 - 2024", "title": "OSIS SMAN 5 Balikpapan", "desc": "Wakil Ketua." }
+      }
+    }
+  },
+  "portfolio": {
+    "header": {
+      "title": "Karya Pilihan",
+      "subtitle": "Arsip rekayasa teknis, desain komersial yang presisi, dan fotografi penangkap emosi."
+    },
+    "filters": {
+      "all": "Indeks",
+      "web": "Rekayasa",
+      "design": "Desain",
+      "photo": "Lensa"
+    },
+    "project": {
+      "viewCase": "Lihat Kasus"
+    }
+  },
+  "contact": {
+    "subtitle": "Pertanyaan",
+    "title1": "Mulai",
+    "title2": "Dialog.",
+    "success": {
+      "title": "Transmisi Diterima",
+      "desc": "Terima kasih telah menghubungi. Saya akan membalas pesan Anda segera.",
+      "btn": "Kirim Modul Lain"
+    },
+    "error": {
+      "desc": "Kesalahan sistem terdeteksi. Transmisi gagal dikirim. Periksa koneksi Anda atau gunakan tautan email langsung.",
+      "retryBtn": "Coba Lagi",
+      "directBtn": "Email Langsung"
+    },
+    "form": {
+      "name": "Nama",
+      "emailPlaceholder": "Email",
+      "emailLabel": "Alamat Email",
+      "messagePlaceholder": "Pesan",
+      "messageLabel": "Badan Pesan"
+    },
+    "poweredBy": "Diberdayakan oleh",
+    "btn": {
+      "submitting": "Mengenkripsi...",
+      "idle": "Kirim Sinyal"
+    }
+  },
+  "footer": {
+    "location": "INDONESIA."
+  }
+}

@@ -2,9 +2,9 @@
   <div class="min-h-screen bg-[#0a0a0a] text-gray-200 font-outfit overflow-x-hidden selection:bg-indigo-500/30">
     <BootLoader />
     <CustomCursor />
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
+    <router-view v-slot="{ Component, route }">
+      <transition name="page" mode="out-in">
+        <component :is="Component" :key="route.path" />
       </transition>
     </router-view>
   </div>
@@ -22,13 +22,18 @@ html {
 }
 
 /* Page Transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.page-enter-from {
   opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: scale(0.98);
 }
 </style>

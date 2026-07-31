@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "about": "About",
+    "portfolio": "Selected Works",
+    "letsTalk": "Let's Talk",
+    "theme_light": "Light",
+    "theme_dark": "Dark"
+  },
+  "hero": {
+    "title1": "Developer",
+    "title2": "& Creative",
+    "title3": "Designer",
+    "description": "Crafting digital experiences through minimal code, brutalist semantics, and high-fashion aesthetics. Elevating the standard of web interaction."
+  },
+  "about": {
+    "header": {
+      "prefix": "Bridging the gap between",
+      "logic": "logic",
+      "amp": "&",
+      "aesthetics": "aesthetics.",
+      "cv": "Curriculum Vitae"
+    },
+    "stats": {
+      "yearsExp": "Years Exp.",
+      "projects": "Projects"
+    },
+    "philosophy": {
+      "title": "Philosophy",
+      "p1_1": "I believe that ",
+      "p1_highlight": "great design must be supported by clean code",
+      "p1_2": ", and robust systems need intuitive interfaces to truly shine.",
+      "p2": "Through the lens of a photographer, I learned to identify crucial details and framing. As a designer, I learned empathy for the user. And as a developer, I learned how to build scalable logic to bring those aesthetic visions to life."
+    },
+    "process": {
+      "title": "Process",
+      "step1": { "title": "01 // Discovery", "desc": "Understanding core goals, target audience, technical constraints, and competitive landscape." },
+      "step2": { "title": "02 // Concept", "desc": "Wireframing, moodboards, and establishing a raw, unfiltered visual direction." },
+      "step3": { "title": "03 // Creation", "desc": "Writing semantic code, designing minimalist components, and executing photoshoots." },
+      "step4": { "title": "04 // Delivery", "desc": "Rigorous testing, performance optimization, deployment, and immaculate handoff." }
+    },
+    "skills": {
+      "title": "Technical Arsenal",
+      "se": { "title": "Software Engineering", "desc": "Vue.js, Next.js, TailwindCSS, Node.js, Java, Python. Focus on clean architectures and robust REST APIs." },
+      "design": { "title": "Art Direction & Design", "desc": "Figma, Adobe Illustrator, UI/UX, Typography, Brand Identity. Crafting interfaces that feel physical." },
+      "lens": { "title": "Lens Work", "desc": "Portraiture, Commercial Photography, Lightroom, Color Grading. Capturing raw emotional geometry." }
+    },
+    "timeline": {
+      "tabs": { "experience": "Experience", "github": "GitHub", "organization": "Organization" },
+      "exp": {
+        "item1": { "date": "Present", "title": "Freelance Creative Developer", "desc": "Building modern web applications and providing full-stack design solutions for high-end clientele." },
+        "item2": { "date": "2024", "title": "Computer Science Degree", "desc": "Undergraduate Informatics Student at Institute Technology of Kalimantan, focusing on human-computer interaction, algorithm design, and modern web technologies." }
+      },
+      "github": {
+        "statsTitle": "GitHub Statistics",
+        "graphTitle": "Contributions Graph",
+        "systemOnline": "SYSTEM ONLINE",
+        "fetching": "Fetching contribution logs... github.com/AZRLB23"
+      },
+      "org": {
+        "item1": { "date": "2026 - Present", "title": "Institute of Electrical and Electronics Engineers ITK Student Branch", "desc": "Chairperson." },
+        "item2": { "date": "2026 - Present", "title": "Informatics Student Association of ITK", "desc": "Expert Staff, Student Resource Development." },
+        "item3": { "date": "2025 - 2026", "title": "Institute of Electrical and Electronics Engineers ITK Student Branch", "desc": "Human Resources Department." },
+        "item4": { "date": "2025 - 2026", "title": "Informatics Student Association of ITK", "desc": "Staff, Student Resource Development." },
+        "item5": { "date": "2023 - 2025", "title": "Anti-Drug Alert Network (Jarwasnaba)", "desc": "Member." },
+        "item6": { "date": "2023 - 2024", "title": "Student Council of SMAN 5 Balikpapan", "desc": "Vice Chairperson." }
+      }
+    }
+  },
+  "portfolio": {
+    "header": {
+      "title": "Selected Works",
+      "subtitle": "An archive of technical engineering, precise editorial design, and emotional photography."
+    },
+    "filters": {
+      "all": "Index",
+      "web": "Engineering",
+      "design": "Design",
+      "photo": "Lens"
+    },
+    "project": {
+      "viewCase": "View Case"
+    }
+  },
+  "contact": {
+    "subtitle": "Inquiries",
+    "title1": "Initiate",
+    "title2": "Dialogue.",
+    "success": {
+      "title": "Transmission Received",
+      "desc": "Thank you for reaching out. I will respond to your inquiry shortly.",
+      "btn": "Send Another Module"
+    },
+    "error": {
+      "desc": "System error detected. The transmission failed to send. Please verify your connection or use the direct email link.",
+      "retryBtn": "Retry",
+      "directBtn": "Direct Mail"
+    },
+    "form": {
+      "name": "Name",
+      "emailPlaceholder": "Email",
+      "emailLabel": "Email Address",
+      "messagePlaceholder": "Message",
+      "messageLabel": "Message Body"
+    },
+    "poweredBy": "Powered by",
+    "btn": {
+      "submitting": "Encrypting...",
+      "idle": "Dispatch Signal"
+    }
+  },
+  "footer": {
+    "location": "INDONESIA."
+  }
+}

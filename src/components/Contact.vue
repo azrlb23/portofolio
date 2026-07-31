@@ -5,27 +5,27 @@
       <!-- Header -->
       <div class="mb-12 text-center">
         <span class="text-[10px] uppercase tracking-[0.3em] font-mono text-[#555555] dark:text-[#888888] mb-6 block transition-colors duration-500">
-          [ Inquiries ]
+          [ {{ $t('contact.subtitle') }} ]
         </span>
         <h2 class="text-4xl md:text-6xl font-serif italic text-[#111111] dark:text-[#e5e5e5] leading-[0.9] tracking-tighter transition-colors duration-500">
-          Initiate<br />
-          <span class="font-sans font-light not-italic text-transparent [-webkit-text-stroke:1px_#111111] dark:[-webkit-text-stroke:1px_#e5e5e5] transition-all duration-500">Dialogue.</span>
+          {{ $t('contact.title1') }}<br />
+          <span class="font-sans font-light not-italic text-transparent [-webkit-text-stroke:1px_#111111] dark:[-webkit-text-stroke:1px_#e5e5e5] transition-all duration-500">{{ $t('contact.title2') }}</span>
         </h2>
       </div>
 
       <!-- Form Status Notices -->
       <transition name="fade">
         <div v-if="submissionStatus === 'success'" class="w-full bg-[#E5E5E5] dark:bg-[#111111] p-6 mb-8 text-center border-l-2 border-[#111111] dark:border-[#e5e5e5]">
-          <h3 class="font-serif italic text-2xl text-[#111111] dark:text-[#e5e5e5] mb-2">Transmission Received</h3>
-          <p class="text-sm font-light text-[#555555] dark:text-[#888888]">Thank you for reaching out. I will respond to your inquiry shortly.</p>
-          <button @click="resetForm" class="mt-6 text-[10px] uppercase tracking-[0.2em] border-b border-[#111111] dark:border-[#e5e5e5] pb-1 text-[#111111] dark:text-[#e5e5e5]">Send Another Module</button>
+          <h3 class="font-serif italic text-2xl text-[#111111] dark:text-[#e5e5e5] mb-2">{{ $t('contact.success.title') }}</h3>
+          <p class="text-sm font-light text-[#555555] dark:text-[#888888]">{{ $t('contact.success.desc') }}</p>
+          <button @click="resetForm" class="mt-6 text-[10px] uppercase tracking-[0.2em] border-b border-[#111111] dark:border-[#e5e5e5] pb-1 text-[#111111] dark:text-[#e5e5e5]">{{ $t('contact.success.btn') }}</button>
         </div>
         
         <div v-else-if="submissionStatus === 'error'" class="w-full bg-red-50 dark:bg-red-950/20 p-6 mb-8 text-center border-l-2 border-red-500">
-          <p class="text-sm font-light text-red-600 dark:text-red-400">System error detected. The transmission failed to send. Please verify your connection or use the direct email link.</p>
+          <p class="text-sm font-light text-red-600 dark:text-red-400">{{ $t('contact.error.desc') }}</p>
           <div class="mt-4 flex gap-4 justify-center">
-            <button @click="submissionStatus = 'idle'" class="text-[10px] uppercase tracking-[0.2em] border-b border-red-600 dark:border-red-400 pb-1 text-red-600 dark:text-red-400">Retry</button>
-            <a href="mailto:azrielalbian23@gmail.com" class="text-[10px] uppercase tracking-[0.2em] border-b border-[#111111] dark:border-[#e5e5e5] pb-1 text-[#111111] dark:text-[#e5e5e5]">Direct Mail</a>
+            <button @click="submissionStatus = 'idle'" class="text-[10px] uppercase tracking-[0.2em] border-b border-red-600 dark:border-red-400 pb-1 text-red-600 dark:text-red-400">{{ $t('contact.error.retryBtn') }}</button>
+            <a href="mailto:azrielalbian23@gmail.com" class="text-[10px] uppercase tracking-[0.2em] border-b border-[#111111] dark:border-[#e5e5e5] pb-1 text-[#111111] dark:text-[#e5e5e5]">{{ $t('contact.error.directBtn') }}</a>
           </div>
         </div>
       </transition>
@@ -42,13 +42,13 @@
             required
             @keydown="handleTypingSound"
             class="block w-full bg-transparent border-0 border-b border-[#CCCCCC] dark:border-[#333333] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-0 font-light placeholder-transparent transition-colors peer"
-            placeholder="Name"
+            :placeholder="$t('contact.form.name')"
           />
           <label 
             for="name" 
             class="absolute left-0 top-3 text-[#888888] dark:text-[#555555] text-sm md:text-base font-light transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-[#111111] dark:peer-focus:text-[#e5e5e5] peer-valid:-top-3.5 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-[0.2em]"
           >
-            Name
+            {{ $t('contact.form.name') }}
           </label>
         </div>
 
@@ -61,13 +61,13 @@
             required
             @keydown="handleTypingSound"
             class="block w-full bg-transparent border-0 border-b border-[#CCCCCC] dark:border-[#333333] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-0 font-light placeholder-transparent transition-colors peer"
-            placeholder="Email"
+            :placeholder="$t('contact.form.emailPlaceholder')"
           />
           <label 
             for="email" 
             class="absolute left-0 top-3 text-[#888888] dark:text-[#555555] text-sm md:text-base font-light transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-[#111111] dark:peer-focus:text-[#e5e5e5] peer-valid:-top-3.5 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-[0.2em]"
           >
-            Email Address
+            {{ $t('contact.form.emailLabel') }}
           </label>
         </div>
 
@@ -79,20 +79,20 @@
             required
             @keydown="handleTypingSound"
             class="block w-full h-full bg-transparent border-0 border-b border-[#CCCCCC] dark:border-[#333333] focus:border-[#111111] dark:focus:border-[#e5e5e5] focus:ring-0 text-[#111111] dark:text-[#e5e5e5] text-sm md:text-base py-3 px-0 font-light placeholder-transparent transition-colors peer resize-none custom-scrollbar"
-            placeholder="Message"
+            :placeholder="$t('contact.form.messagePlaceholder')"
           ></textarea>
           <label 
             for="message" 
             class="absolute left-0 top-3 text-[#888888] dark:text-[#555555] text-sm md:text-base font-light transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-[10px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-[#111111] dark:peer-focus:text-[#e5e5e5] peer-valid:-top-3.5 peer-valid:text-[10px] peer-valid:uppercase peer-valid:tracking-[0.2em]"
           >
-            Message Body
+            {{ $t('contact.form.messageLabel') }}
           </label>
         </div>
 
         <!-- Submission Controls -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mt-4">
           <p class="text-[10px] text-[#888888] uppercase tracking-wider text-center sm:text-left">
-            Powered by <a href="https://web3forms.com" target="_blank" class="border-b border-[#CCCCCC] dark:border-[#555555] hover:text-[#111111] dark:hover:text-white transition-colors">Web3Forms</a>
+            {{ $t('contact.poweredBy') }} <a href="https://web3forms.com" target="_blank" class="border-b border-[#CCCCCC] dark:border-[#555555] hover:text-[#111111] dark:hover:text-white transition-colors">Web3Forms</a>
           </p>
 
           <button 
@@ -110,7 +110,7 @@
               </svg>
               
               <span class="text-[#111111] dark:text-[#e5e5e5] group-hover:text-[#FAFAFA] dark:group-hover:text-[#050505] text-[10px] font-medium uppercase tracking-[0.2em] transition-colors duration-500">
-                {{ submissionStatus === 'submitting' ? 'Encrypting...' : 'Dispatch Signal' }}
+                {{ submissionStatus === 'submitting' ? $t('contact.btn.submitting') : $t('contact.btn.idle') }}
               </span>
             </div>
           </button>

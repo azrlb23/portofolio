@@ -4,8 +4,8 @@
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
         <div v-scroll-reveal>
-          <h2 class="text-4xl md:text-6xl font-serif text-[#111111] dark:text-[#e5e5e5] mb-6 italic tracking-tight transition-colors duration-500">Selected Works</h2>
-          <p class="text-[#555555] dark:text-[#888888] text-sm md:text-base max-w-md font-light leading-relaxed transition-colors duration-500">An archive of technical engineering, precise editorial design, and emotional photography.</p>
+          <h2 class="text-4xl md:text-6xl font-serif text-[#111111] dark:text-[#e5e5e5] mb-6 italic tracking-tight transition-colors duration-500">{{ $t('portfolio.header.title') }}</h2>
+          <p class="text-[#555555] dark:text-[#888888] text-sm md:text-base max-w-md font-light leading-relaxed transition-colors duration-500">{{ $t('portfolio.header.subtitle') }}</p>
         </div>
         
         <!-- Minimalist Filters -->
@@ -17,7 +17,7 @@
             class="text-[10px] uppercase tracking-[0.2em] transition-colors whitespace-nowrap cursor-pointer pb-2 relative"
             :class="activeFilter === filter.id ? 'text-[#111111] dark:text-[#e5e5e5] font-medium' : 'text-[#888888] dark:text-[#555555] hover:text-[#111111] dark:hover:text-[#888888] font-light'"
           >
-            {{ filter.label }}
+            {{ $t('portfolio.filters.' + filter.id) }}
             <span v-if="activeFilter === filter.id" class="absolute bottom-[-17px] left-0 w-full h-[1px] bg-[#111111] dark:bg-[#e5e5e5] transition-colors duration-500"></span>
           </button>
         </div>
@@ -77,7 +77,7 @@
             
             <!-- Editorial Read More -->
             <div class="flex items-center gap-2 md:gap-4 text-[#111111] dark:text-[#e5e5e5] text-[8px] md:text-xs uppercase tracking-[0.2em] font-medium opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-700 delay-200">
-              <span>View Case</span>
+              <span>{{ $t('portfolio.project.viewCase') }}</span>
               <div class="w-3 md:w-8 h-[1px] bg-[#111111] dark:bg-[#e5e5e5] transform origin-left scale-x-100 md:scale-x-0 group-hover:scale-x-100 transition-all duration-700 delay-300"></div>
             </div>
           </div>
